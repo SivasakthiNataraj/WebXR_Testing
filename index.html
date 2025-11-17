@@ -7,27 +7,12 @@
 </head>
 
 <body>
-    <script>
-        AFRAME.registerComponent('scale-on-mouseenter', {
-            schema: {
-                to: { default: '2.5 2.5 2.5', type: 'vec3' }
-            },
-
-            init: function () {
-                var data = this.data;
-                var el = this.el;
-                this.el.addEventListener('mouseenter', function () {
-                    el.object3D.scale.copy(data.to);
-                });
-            }
-        });
-    </script>
-
-    <a-scene webxr="optionalFeatures:  hit-test;" ar-hit-test="target:#myobject;">
-        <a-entity id="myobject"></a-entity>
-        <a-light hide-on-enter-ar></a-light>
-        <a-sky hide-on-enter-ar color="skyblue"></a-sky>
-    </a-scene>
+    <a-scene
+  xr-mode-ui="enterVRButton: #myEnterVRButton; enterARButton: #myEnterARButton; XRMode: xr;">
+  <!-- Style the button with images and/or custom CSS. -->
+  <a id="myEnterVRButton" href="#"></a>
+  <a id="myEnterARButton" href="#"></a>
+</a-scene>
 </body>
 
 </html>
